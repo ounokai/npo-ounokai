@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="特定非営利活動法人 音楽センター櫻の会の公式サイト">
+<title>音楽センター櫻の会</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --bg:#F5F6F3; --surface:#FFFFFF; --text:#1B2422; --text-muted:#566259;
+    --brand:#145C52; --brand-deep:#0E3F39; --gold:#D98F2B; --border:#DCE3DF;
+    --on-brand:#F3F6F4;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0F1614; --surface:#16211E; --text:#E9EEEB; --text-muted:#93A39B;
+      --brand:#4FA393; --brand-deep:#0E3F39; --gold:#E8A94D; --border:#29342F;
+      --on-brand:#F3F6F4;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0F1614; --surface:#16211E; --text:#E9EEEB; --text-muted:#93A39B;
+    --brand:#4FA393; --brand-deep:#0E3F39; --gold:#E8A94D; --border:#29342F;
+    --on-brand:#F3F6F4;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:"Noto Sans JP",sans-serif; line-height:1.8; -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:"Shippori Mincho B1",serif; text-wrap:balance; margin:0;}
+  a{color:inherit;}
+  .wrap{max-width:980px; margin:0 auto; padding:0 24px;}
+
+  header.site{padding:16px 0; border-bottom:1px solid var(--border);}
+  header.site .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;}
+  .brand{font-family:"Shippori Mincho B1",serif; font-size:1.1rem; font-weight:700;}
+  nav.site ul{display:flex; gap:22px; list-style:none; margin:0; padding:0; flex-wrap:wrap;}
+  nav.site a{text-decoration:none; color:var(--text); font-size:.92rem;}
+  nav.site a:hover{color:var(--brand);}
+
+  .hero{
+    background:linear-gradient(160deg, var(--brand-deep), var(--brand));
+    color:var(--on-brand); padding:76px 0 64px;
+  }
+  .hero .eyebrow{color:var(--gold); font-weight:700; font-size:.82rem; letter-spacing:.16em; text-transform:uppercase;}
+  .hero h1{font-size:clamp(1.9rem,4.4vw,2.9rem); margin-top:14px; max-width:16ch;}
+  .hero p{opacity:.88; max-width:52ch; margin-top:18px; font-size:1.04rem;}
+  .stat-row{display:grid; grid-template-columns:repeat(3,auto); gap:36px; margin-top:44px;}
+  @media (max-width:560px){.stat-row{grid-template-columns:1fr; gap:20px;}}
+  .stat .num{font-size:2rem; font-weight:700; font-variant-numeric:tabular-nums; font-family:"Shippori Mincho B1",serif;}
+  .stat .label{opacity:.78; font-size:.82rem; margin-top:2px;}
+
+  section{padding:56px 0; border-bottom:1px solid var(--border);}
+  section:last-of-type{border-bottom:none;}
+  .section-head{margin-bottom:30px; display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap;}
+  .section-head .eyebrow{color:var(--brand); font-weight:700; font-size:.78rem; letter-spacing:.14em; text-transform:uppercase;}
+  .section-head h2{font-size:1.55rem; margin-top:8px;}
+  .section-head .more{font-size:.86rem; color:var(--brand); text-decoration:none; white-space:nowrap;}
+  .section-head .more:hover{text-decoration:underline;}
+
+  .concert-teaser{display:grid; gap:12px; margin-bottom:22px;}
+  .concert-teaser-item{
+    display:flex; gap:18px; align-items:baseline; background:var(--surface);
+    border:1px solid var(--border); border-radius:8px; padding:16px 20px; text-decoration:none; color:var(--text);
+  }
+  .concert-teaser-item:hover{border-color:var(--brand);}
+  .concert-teaser-item .date{font-family:"Shippori Mincho B1",serif; color:var(--brand); font-weight:700; white-space:nowrap; font-variant-numeric:tabular-nums; font-size:1rem;}
+  .concert-teaser-item .info h3{font-size:.98rem; margin-bottom:3px; font-family:"Noto Sans JP",sans-serif; font-weight:700;}
+  .concert-teaser-item .info .venue{color:var(--text-muted); font-size:.84rem;}
+  .concert-teaser-cta{text-align:center; margin-top:6px;}
+
+  .about-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:36px;}
+  @media (max-width:680px){.about-grid{grid-template-columns:1fr;}}
+  .about-grid p{color:var(--text-muted); font-size:.98rem;}
+  .fact-card{background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:20px;}
+  .fact-card dl{margin:0; display:grid; grid-template-columns:auto 1fr; gap:10px 16px; font-size:.9rem;}
+  .fact-card dt{color:var(--text-muted);}
+
+  .officer-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:14px;}
+  .officer{background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:18px; text-align:center;}
+  .officer .role{color:var(--brand); font-size:.76rem; font-weight:700; letter-spacing:.08em;}
+  .officer .name{margin-top:6px; font-weight:700;}
+  .officer .affil{margin-top:2px; color:var(--text-muted); font-size:.78rem;}
+
+  .program-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:20px;}
+  .program{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:26px; border-top:3px solid var(--brand);}
+  .program h3{font-size:1.06rem; margin-bottom:10px;}
+  .program p{margin:0; color:var(--text-muted); font-size:.9rem;}
+
+  .impact-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:18px; margin-bottom:32px;}
+  .impact{background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:20px; text-align:center;}
+  .impact .num{font-size:1.7rem; font-weight:700; font-variant-numeric:tabular-nums; color:var(--brand); font-family:"Shippori Mincho B1",serif;}
+  .impact .label{color:var(--text-muted); font-size:.82rem; margin-top:4px;}
+  .report-list{list-style:none; margin:0; padding:0; display:grid; gap:10px;}
+  .report-list li{display:flex; gap:14px; padding:12px 0; border-bottom:1px solid var(--border); font-size:.92rem;}
+  .report-list time{color:var(--text-muted); white-space:nowrap; font-variant-numeric:tabular-nums;}
+
+  .cta-band{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:36px; display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap;}
+  .cta-band h2{font-size:1.3rem;}
+  .cta-band p{margin:6px 0 0; color:var(--text-muted); font-size:.92rem;}
+  .cta-buttons{display:flex; gap:12px; flex-wrap:wrap;}
+  .btn{display:inline-block; padding:12px 22px; border-radius:6px; font-size:.9rem; font-weight:700; text-decoration:none; white-space:nowrap;}
+  .btn-primary{background:var(--gold); color:#1B2422;}
+  .btn-ghost{border:1px solid var(--border); color:var(--text);}
+
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+  @media (max-width:640px){.contact-grid{grid-template-columns:1fr;}}
+  .contact-card{background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:22px;}
+  .contact-card dl{margin:0; display:grid; grid-template-columns:auto 1fr; gap:8px 16px; font-size:.92rem;}
+  .contact-card dt{color:var(--text-muted);}
+
+  footer.site{padding:28px 0; color:var(--text-muted); font-size:.82rem;}
+  footer.site .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <div class="brand">特定非営利活動法人 音楽センター櫻の会</div>
+    <nav class="site">
+      <ul>
+        <li><a href="concerts.html">コンサート情報</a></li>
+        <li><a href="#about">私たちについて</a></li>
+        <li><a href="#officers">役員紹介</a></li>
+        <li><a href="#programs">活動内容</a></li>
+        <li><a href="#impact">活動報告</a></li>
+        <li><a href="#support">寄付・会員</a></li>
+        <li><a href="#contact">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Our Mission</div>
+    <h1>音楽の力で、心を癒し、文化をつなぐ。</h1>
+    <p>豊かな情操を育み、音楽による心の癒しを推進するとともに、日本古来の音楽を次世代へ継承するために、良質な芸術音楽による公演や音楽療法の普及啓発を行っています。</p>
+    <div class="stat-row">
+      <div class="stat"><div class="num">2008<span style="font-size:1rem">年</span></div><div class="label">設立（定款附則より推定・要確認）</div></div>
+      <div class="stat"><div class="num">2</div><div class="label">事業分野（公演運営・音楽療法）</div></div>
+      <div class="stat"><div class="num">5,000<span style="font-size:1rem">円</span></div><div class="label">賛助会員 年会費</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="concerts">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Upcoming Concerts</div>
+        <h2>近日開催のコンサート</h2>
+      </div>
+    </div>
+    <div class="concert-teaser">
+      <a class="concert-teaser-item" href="concerts.html">
+        <span class="date">2026.9.6 (日)</span>
+        <span class="info">
+          <h3>第71回 さろんこんさーと 〜ダブルリードの響演〜</h3>
+          <span class="venue">木下家（サロンコンサート）／ 16:30開演 ／ 2,500円</span>
+        </span>
+      </a>
+      <a class="concert-teaser-item" href="concerts.html">
+        <span class="date">2026.11.4 (水)</span>
+        <span class="info">
+          <h3>秋の音楽を楽しむひととき 〜心に響くアンサンブルの調べ〜</h3>
+          <span class="venue">町田市民フォーラム ホール ／ 14:00開演 ／ 2,500円</span>
+        </span>
+      </a>
+    </div>
+    <div class="concert-teaser-cta">
+      <a class="btn btn-primary" href="concerts.html">コンサート情報をすべて見る</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">About Us</div>
+      <h2>私たちについて</h2>
+    </div>
+    <div class="about-grid">
+      <p>
+        特定非営利活動法人 音楽センター櫻の会は、広く市民の皆さまに向けて、豊かな情操を育み、音楽による心の癒しを推進するとともに、日本古来の音楽を次世代へ継承することを目指して活動しています。良質な芸術音楽による公演や音楽療法の普及啓発を通じて、音楽文化の発展と福祉の向上に寄与することを目的としています。<br><br>
+        正会員・賛助会員の皆さまに支えられながら、東京都町田市を拠点に活動を続けています。
+      </p>
+      <div class="fact-card">
+        <dl>
+          <dt>設立</dt><dd>2008年（定款附則より推定・要確認）</dd>
+          <dt>法人格</dt><dd>特定非営利活動法人</dd>
+          <dt>所在地</dt><dd>東京都町田市西成瀬2丁目32番4号</dd>
+          <dt>理事長</dt><dd>木下 賢治（定款記載。最新情報は要確認）</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="officers">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Board Members</div>
+      <h2>役員紹介</h2>
+    </div>
+    <div class="officer-grid">
+      <div class="officer"><div class="role">理事長</div><div class="name">木下 賢治</div></div>
+      <div class="officer"><div class="role">理事</div><div class="name">湯本 耕一</div></div>
+      <div class="officer"><div class="role">理事</div><div class="name">山本 育代</div><div class="affil">Albero Musicale</div></div>
+      <div class="officer"><div class="role">会計</div><div class="name">竹澤 琴絵</div></div>
+      <div class="officer"><div class="role">監事</div><div class="name">高畠 佳子</div></div>
+      <div class="officer"><div class="role">事務局</div><div class="name">常田 幸代</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="programs">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Programs</div>
+      <h2>活動内容</h2>
+    </div>
+    <div class="program-grid">
+      <div class="program">
+        <h3>音楽公演等の運営事業</h3>
+        <p>良質な芸術音楽による公演を企画・運営し、日本古来の音楽の継承と音楽文化の発展に取り組んでいます。</p>
+      </div>
+      <div class="program">
+        <h3>音楽療法の普及啓発事業</h3>
+        <p>音楽による心の癒しを、より多くの方に届けるため、音楽療法の普及と啓発活動を行っています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="impact">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Impact Report</div>
+      <h2>活動報告</h2>
+    </div>
+    <div class="impact-grid">
+      <div class="impact"><div class="num">71<span style="font-size:1rem">回〜</span></div><div class="label">さろんこんさーと 開催実績</div></div>
+      <div class="impact"><div class="num">18</div><div class="label">活動年数（設立推定年より）</div></div>
+    </div>
+    <ul class="report-list">
+      <li><time>2026.11</time><span>秋の音楽を楽しむひととき 〜心に響くアンサンブルの調べ〜 を開催予定。</span></li>
+      <li><time>2026.09</time><span>第71回 さろんこんさーと 〜ダブルリードの響演〜 を開催予定。</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="support">
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <h2>活動を支えてくださる方へ</h2>
+        <p>正会員（年会費5,000円）・賛助会員（一口5,000円以上）としてご入会いただけます。単発のご寄付も受け付けています。</p>
+      </div>
+      <div class="cta-buttons">
+        <a class="btn btn-primary" href="#contact">寄付する</a>
+        <a class="btn btn-ghost" href="#contact">会員登録</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Contact</div>
+      <h2>お問い合わせ</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <dl>
+          <dt>所在地</dt><dd>東京都町田市西成瀬2丁目32番4号</dd>
+          <dt>電話</dt><dd>042-722-1564</dd>
+          <dt>メール</dt><dd>ounokai@gmail.com</dd>
+          <dt>受付</dt><dd>予約・お問い合わせ随時</dd>
+        </dl>
+      </div>
+      <div class="contact-card">
+        <dl>
+          <dt>法人格</dt><dd>特定非営利活動法人</dd>
+          <dt>会費</dt><dd>正会員 年5,000円／賛助会員 一口5,000円以上</dd>
+          <dt>事業年度</dt><dd>毎年4月1日〜翌3月31日</dd>
+          <dt>SNS</dt><dd>X / Instagram（リンクを設置）</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <span>&copy; 2026 特定非営利活動法人 音楽センター櫻の会</span>
+  </div>
+</footer>
+
+</body>
+</html>

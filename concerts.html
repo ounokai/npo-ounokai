@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="特定非営利活動法人 音楽センター櫻の会 コンサート情報">
+<title>コンサート情報 | 音楽センター櫻の会</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --bg:#F5F6F3; --surface:#FFFFFF; --text:#1B2422; --text-muted:#566259;
+    --brand:#145C52; --brand-deep:#0E3F39; --gold:#D98F2B; --border:#DCE3DF;
+    --on-brand:#F3F6F4;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0F1614; --surface:#16211E; --text:#E9EEEB; --text-muted:#93A39B;
+      --brand:#4FA393; --brand-deep:#0E3F39; --gold:#E8A94D; --border:#29342F;
+      --on-brand:#F3F6F4;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0F1614; --surface:#16211E; --text:#E9EEEB; --text-muted:#93A39B;
+    --brand:#4FA393; --brand-deep:#0E3F39; --gold:#E8A94D; --border:#29342F;
+    --on-brand:#F3F6F4;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:"Noto Sans JP",sans-serif; line-height:1.8; -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:"Shippori Mincho B1",serif; text-wrap:balance; margin:0;}
+  a{color:inherit;}
+  .wrap{max-width:980px; margin:0 auto; padding:0 24px;}
+
+  header.site{padding:16px 0; border-bottom:1px solid var(--border);}
+  header.site .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;}
+  .brand{font-family:"Shippori Mincho B1",serif; font-size:1.1rem; font-weight:700;}
+  .back-link{text-decoration:none; color:var(--brand); font-size:.9rem; font-weight:700;}
+  .back-link:hover{text-decoration:underline;}
+
+  .page-head{padding:48px 0 8px;}
+  .eyebrow{color:var(--brand); font-weight:700; font-size:.78rem; letter-spacing:.14em; text-transform:uppercase;}
+  .page-head h1{font-size:clamp(1.7rem,4vw,2.3rem); margin-top:10px;}
+
+  section{padding:44px 0;}
+
+  .concert-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:26px;}
+  .concert-card{background:var(--surface); border:1px solid var(--border); border-radius:10px; overflow:hidden;}
+  .concert-card .date-band{background:var(--brand); color:var(--on-brand); padding:16px 22px; display:flex; justify-content:space-between; align-items:baseline;}
+  .concert-card .date-band .date{font-family:"Shippori Mincho B1",serif; font-size:1.25rem; font-variant-numeric:tabular-nums;}
+  .concert-card .date-band .series{font-size:.76rem; opacity:.85;}
+  .concert-card .body{padding:22px;}
+  .concert-card h3{font-size:1.1rem; margin-bottom:10px;}
+  .concert-card dl{margin:0 0 12px; display:grid; grid-template-columns:auto 1fr; gap:6px 12px; font-size:.88rem;}
+  .concert-card dt{color:var(--text-muted);}
+  .concert-card dd a{color:var(--brand); text-decoration:none;}
+  .concert-card dd a:hover{text-decoration:underline;}
+  .concert-card .performers{font-size:.85rem; color:var(--text-muted); border-top:1px solid var(--border); padding-top:12px; margin-top:4px;}
+  .concert-card .performers b{color:var(--text); font-weight:700;}
+  .concert-card .flyer{width:100%; display:block;}
+  .concert-card .flyer-pair{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border);}
+  .concert-card .flyer-pair img{width:100%; display:block;}
+
+  footer.site{padding:28px 0; color:var(--text-muted); font-size:.82rem; border-top:1px solid var(--border);}
+  footer.site .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <div class="brand">特定非営利活動法人 音楽センター櫻の会</div>
+    <a class="back-link" href="index.html">← トップページに戻る</a>
+  </div>
+</header>
+
+<div class="wrap page-head">
+  <div class="eyebrow">Upcoming Concerts</div>
+  <h1>コンサート情報</h1>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="concert-grid">
+      <div class="concert-card">
+        <div class="date-band">
+          <span class="date">2026.9.6 (日) 16:30開演</span>
+          <span class="series">第71回 さろんこんさーと</span>
+        </div>
+        <img class="flyer" src="images/flyer-doublereed.jpg" alt="第71回さろんこんさーとチラシ">
+        <div class="body">
+          <h3>〜ダブルリードの響演〜</h3>
+          <dl>
+            <dt>会場</dt><dd>木下家（東京都町田市西成瀬2-32-4）サロンコンサート</dd>
+            <dt>料金</dt><dd>2,500円</dd>
+            <dt>予約</dt><dd><a href="tel:0427221564">TEL 042-722-1564</a> ／ <a href="mailto:ounokai@gmail.com">ounokai@gmail.com</a></dd>
+          </dl>
+          <div class="performers">
+            <b>オーボエ</b> 桃原健一　<b>ファゴット</b> 久住美香　<b>ピアノ</b> 木下賢治<br>
+            オペラ「愛の妙薬」より人知れぬ涙（ドニゼッティ）、アラ・ホーンパイプ（ヘンデル）、オーボエとファゴットとピアノのための協奏曲（ヴィヴァルディ）、ひまわり（葉加瀬太郎）、羽根屋（柏木広樹）ほか
+          </div>
+        </div>
+      </div>
+      <div class="concert-card">
+        <div class="date-band">
+          <span class="date">2026.11.4 (水) 14:00開演</span>
+          <span class="series">開場13:30</span>
+        </div>
+        <div class="flyer-pair">
+          <img src="images/flyer-autumn-front.jpg" alt="秋の音楽を楽しむひととき チラシ表面">
+          <img src="images/flyer-autumn-back.jpg" alt="秋の音楽を楽しむひととき チラシ裏面">
+        </div>
+        <div class="body">
+          <h3>秋の音楽を楽しむひととき 〜心に響くアンサンブルの調べ〜</h3>
+          <dl>
+            <dt>会場</dt><dd>町田市民フォーラム ホール（町田市原町田4-9-8）</dd>
+            <dt>料金</dt><dd>全席自由 2,500円</dd>
+            <dt>予約</dt><dd><a href="tel:0427221564">TEL 042-722-1564</a> ／ <a href="mailto:ounokai@gmail.com">ounokai@gmail.com</a></dd>
+          </dl>
+          <div class="performers">
+            <b>ソプラノ</b> 竹澤琴絵・河村有美　<b>フルート</b> 吉野裕子・佐藤直美　<b>ヴァイオリン</b> 荒木玲子　<b>オーボエ</b> 桃原健一　<b>ファゴット</b> 久住美香　<b>ギター</b> 湯本耕一　<b>ピアノ</b> 木下賢治
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <span>&copy; 2026 特定非営利活動法人 音楽センター櫻の会</span>
+  </div>
+</footer>
+
+</body>
+</html>
